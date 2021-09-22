@@ -5,6 +5,7 @@ import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 
 const Player = (props) => {
     const {name, email, phone, image, yearlySalary} = props.playerData;
+    const handlePlayer = props.handleAddPlayer;
     return (
         <div>
             <h4>Player Name: {name}</h4>
@@ -12,7 +13,9 @@ const Player = (props) => {
             <p>Email: {email}</p>
             <p>Phone: {phone}</p>
             <p>Yearly Salary: {yearlySalary}</p>
-            <button>
+            <button
+                onClick={() => handlePlayer(props.playerData)}
+            >
                 <FontAwesomeIcon icon={faPlusCircle}/>
                     Add Player</button>
         </div>
