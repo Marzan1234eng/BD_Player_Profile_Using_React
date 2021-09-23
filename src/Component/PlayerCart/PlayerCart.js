@@ -5,7 +5,7 @@ const PlayerCart = (props) => {
     const cart = props.cart;
     const msg = props.msg;
 
-    console.log(msg);
+
 
     let totalSalary = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -22,7 +22,7 @@ const PlayerCart = (props) => {
                 <ol>
                     {
                         cart.map(cart =>
-                            <li key={cart._id}>{cart.name}</li>
+                            <li key={cart._id}>{cart.name} <b>Salary:</b> {cart.yearlySalary}</li>
                         )
                     }
                 </ol>
