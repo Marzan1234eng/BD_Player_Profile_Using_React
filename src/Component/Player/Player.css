@@ -1,3 +1,31 @@
 .profilePic{
     width: 200px;
 }
+
+.profileContainer{
+    display: flex;
+    justify-content: center;
+    border: 1px solid gold;
+}
+
+.playerDetail{
+    display: flex;
+    align-items: center;
+}
+
+.imageContainer{
+    margin-right: 20px;
+}
+
+.addBtn{
+    border: none;
+    width: 140px;
+    height: 35px;
+    background-color: goldenrod;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.addIcon{
+    padding-right: 5px;
+}

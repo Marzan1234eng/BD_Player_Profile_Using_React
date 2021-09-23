@@ -9,15 +9,26 @@ import './PlayerInfo.css'
 const PlayerInfo = () => {
 
     const [player, setPlayer] = useState([]);
+
+    /*json data added using useEffect*/
+
     useEffect(()=>{
         setPlayer(playerJsonData);
     },[])
 
     const [cart, setCart] = useState([]);
+    const [msg, setMsg] = useState([]);
 
     const handleAddPlayer = (playerData) => {
-        const newCart = [...cart,playerData];
-        setCart(newCart);
+        //console.log(playerData);
+        if(cart.includes(playerData) == false){
+            setMsg("");
+            const newCart = [...cart,playerData];
+            setCart(newCart);
+        }else {
+            setMsg("Player Already Added");
+        }
+        //console.log(cart);
     }
 
     return (
@@ -26,13 +37,13 @@ const PlayerInfo = () => {
         }}>
             <div className="playerContainer">
                 {
-                    player.map(playerInfo => <Player handleAddPlayer={handleAddPlayer} playerData={playerInfo}>
+                    player.map(playerInfo => <Player key={playerInfo._id} handleAddPlayer={handleAddPlayer} playerData={playerInfo}>
                         </Player>
                     )
                 }
             </div>
             <div>
-                <PlayerCart cart={cart}>
+                <PlayerCart key={cart._id} cart={cart} msg={msg}>
 
                 </PlayerCart>
             </div>

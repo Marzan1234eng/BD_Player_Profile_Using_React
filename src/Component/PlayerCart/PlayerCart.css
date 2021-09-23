@@ -1,3 +1,8 @@
 .playerCartContainer{
     margin-left: 5px;
 }
+
+.msg{
+    background-color: red;
+    color: white;
+}
